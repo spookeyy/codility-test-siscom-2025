@@ -57,7 +57,7 @@ s and words[i] consist of lowercase English letters.
 "#Solution"
 
 
-def findSubstring(self, s, words):
+def findSubstring(s, words):
         """
         :type s: str
         :type words: List[str]

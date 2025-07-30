@@ -25,7 +25,7 @@ s consist of only digits and English letters."""
 "#Solution"
 
 
-def longestPalindrome(self, s):
+def longestPalindrome(s):
         """
         :type s: str
         :rtype: str

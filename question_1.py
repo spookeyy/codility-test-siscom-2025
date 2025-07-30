@@ -50,7 +50,7 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].  """
 "#Solution"
 
 
-def romanToInt(self, s):
+def romanToInt(s):
         """
         :type s: str
         :rtype: int
