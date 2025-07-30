@@ -1,35 +1,66 @@
-"""You’re building a system to grade multiple-choice quizzes. Each quiz has:
-    A set of questions with fixed answers
-    Each student submits answers to the quiz
+"""
+**SUBSTRING WITH CONCATENATION OF ALL WORDS**
 
-You are given:
-    correct_answers: a list of the correct options (e.g., ['A', 'C', 'B'])
-    student_submissions: a list of student objects:
-        student_id
-        answers: a list of their selected answers
+You are given a string s and an array of strings words. All the strings of words are of the same length.
 
-Rules:
-    For each correct answer, the student gets +4 points
-    For each wrong answer, -1 point
-    No answer (represented by None) gets 0 points
-    
-Write a function that returns a dictionary mapping each student_id to their total score.
+A concatenated string is a string that exactly contains all the strings of any permutation of words concatenated.
+
+For example, if words = ["ab","cd","ef"], then "abcdef", "abefcd", "cdabef", "cdefab", "efabcd", and "efcdab" are all concatenated strings. "acdbef" is not a concatenated string because it is not the concatenation of any permutation of words.
+Return an array of the starting indices of all the concatenated substrings in s. You can return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: s = "barfoothefoobarman", words = ["foo","bar"]
+
+Output: [0,9]
+
+Explanation:
+
+The substring starting at 0 is "barfoo". It is the concatenation of ["bar","foo"] which is a permutation of words.
+The substring starting at 9 is "foobar". It is the concatenation of ["foo","bar"] which is a permutation of words.
+
+Example 2:
+
+Input: s = "wordgoodgoodgoodbestword", words = ["word","good","best","word"]
+
+Output: []
+
+Explanation:
+
+There is no concatenated substring.
+
+Example 3:
+
+Input: s = "barfoofoobarthefoobarman", words = ["bar","foo","the"]
+
+Output: [6,9,12]
+
+Explanation:
+
+The substring starting at 6 is "foobarthe". It is the concatenation of ["foo","bar","the"].
+The substring starting at 9 is "barthefoo". It is the concatenation of ["bar","the","foo"].
+The substring starting at 12 is "thefoobar". It is the concatenation of ["the","foo","bar"].
+
+ 
+
+Constraints:
+
+1 <= s.length <= 104
+1 <= words.length <= 5000
+1 <= words[i].length <= 30
+s and words[i] consist of lowercase English letters.
+
+"""
+
+"#Solution"
 
 
-INPUT """
-correct_answers = ['A', 'C', 'B', 'D']
-
-student_submissions = [
-    {"student_id": "S1", "answers": ['A', 'C', 'B', 'D']},  # all correct
-    {"student_id": "S2", "answers": ['A', 'C', 'D', 'B']},  # 2 correct, 2 wrong
-    {"student_id": "S3", "answers": ['A', None, 'B', 'C']}  # 2 correct, 1 wrong, 1 skipped
-]
-
-
-"OUTPUT"
-{
-    "S1": 16,    # 4x4
-    "S2": 6,     # 4 + 4 -1 -1
-    "S3": 7      # 4 (A) + 0 (None) + 4 (B) -1 (C)
-}
-
+def findSubstring(self, s, words):
+        """
+        :type s: str
+        :type words: List[str]
+        :rtype: List[int]
+        """
+        
