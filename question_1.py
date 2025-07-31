@@ -65,7 +65,7 @@ def romanToInt(s):
 				num -= givenRomanStr[s[i]]
 			else:
 				num += givenRomanStr[s[i]]
-				# returing the converted output
+				# returing the converted string as an integer
 		return print("Converted Output is", num)
 
     
