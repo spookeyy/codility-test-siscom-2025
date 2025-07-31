@@ -51,8 +51,26 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].  """
 
 
 def romanToInt(s):
-        """
-        :type s: str
-        :rtype: int
-        """
+		"""
+		:type s: str
+		:rtype: int
+		"""
+		# efficient conversion of roman to Int from the string "s"
+		givenRomanStr = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+		num = 0
+		for i in range(len(s)):
+			if i != len(s)-1 and givenRomanStr[s[i]] < givenRomanStr[s[i+1]]:
+				num -= givenRomanStr[s[i]]
+			else:
+				num += givenRomanStr[s[i]]
+		return print("Converted Output is", num)
+
+    
+
+romanToInt("MCMXCIV")
+romanToInt("MCM")
+romanToInt("MXCIV")
+romanToInt("IXX") # (10 + 10) = 20 then subtracting (I) 1
+
+
         
