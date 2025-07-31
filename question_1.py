@@ -48,6 +48,7 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].  """
 
 
 "#Solution"
+# the function is expected to return the integer value of the roman number given
 
 
 def romanToInt(s):
@@ -55,14 +56,16 @@ def romanToInt(s):
 		:type s: str
 		:rtype: int
 		"""
-		# efficient conversion of roman to Int from the string "s"
+		# roman to Int from the string "s"
 		givenRomanStr = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
 		num = 0
+		# iterating through the string
 		for i in range(len(s)):
 			if i != len(s)-1 and givenRomanStr[s[i]] < givenRomanStr[s[i+1]]:
 				num -= givenRomanStr[s[i]]
 			else:
 				num += givenRomanStr[s[i]]
+				# returing the converted output
 		return print("Converted Output is", num)
 
     
