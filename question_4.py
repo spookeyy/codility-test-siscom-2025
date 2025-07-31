@@ -16,8 +16,6 @@ The last 2 arguments are the old sign of the customer, and their request.
 
 It should return the cost of changing the sign from the old message to the new message. If there are multiple ways to change the sign, it should return the cheapest way.
 
-
-
 """
 
 

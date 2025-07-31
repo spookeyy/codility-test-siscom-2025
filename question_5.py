@@ -12,8 +12,6 @@ The problem you need to solve is to determine the minimum amount you may need in
 
 You are asked to define function least_bribes(bribes) that takes as argument an array that contains the bribes that each guard will accept in ascending room number and returns the minumum amount you'll need to spend on bribes in the worst case. The problem is not limited to 10 rooms only, so the array bribes can be of any length greater or equal to 1. Your code will have to handle arrays up to 100 in length and bribes between $1 and $1000.
 
-
-
 """
 
 
