@@ -18,6 +18,34 @@ It should return the cost of changing the sign from the old message to the new m
 
 """
 
+# Approach:
+# Expected to return the minimum cost of changing the sign from the old message to the new message
+# step 1 - calculate the cost of adding a letter
+# step 2 - calculate the cost of removing a letter
+# step 3 - calculate the cost of changing a letter
+# step 4 - return the minimum cost
+
 
 def estimate(add_cost, remove_cost, old_sign, new_sign):
-    return 0
+    # step 1
+    add_cost = len(new_sign) - len(old_sign)
+    print("add cost : ", add_cost)
+    # step 2
+    remove_cost = len(old_sign) - len(new_sign)
+    print("remove cost: ", remove_cost)
+    # step 3
+    change_cost = 0
+    for i in range(len(old_sign)):
+        if old_sign[i] != new_sign[i]:
+            change_cost += 1
+    # step 4
+    output = add_cost, remove_cost, change_cost
+    print("Output: ", output)
+
+    minimum_cost = min(output)
+    print("Minimum cost: ", minimum_cost)
+    return minimum_cost
+
+
+estimate(5, 10, "hello", "world")
+    
