@@ -90,8 +90,6 @@ def findSubstring(s, words):
         if total_wordSize > len(s):
                 return results
         
-        # Map stores the words present in words
-        # against it's occurrences inside "words"
         hash_map = dict()
 
         for i in range(count_of_words):
@@ -101,6 +99,7 @@ def findSubstring(s, words):
                         hash_map[words[i]] = 1
 
         for i in range(0, len(s) - total_wordSize + 1, 1):
+                # 
                 temp_hash_map = hash_map.copy()
                 j = i
                 count = count_of_words
